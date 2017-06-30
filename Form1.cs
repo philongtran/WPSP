@@ -72,25 +72,25 @@ namespace Meine_Fußball_Mannschaft
             }
         }
 
-        private void UpdatePlayer(Player s)
+        private void UpdatePlayer(Player player)
         {
-            t_name.Text = s.Name;
-            t_vorname.Text = s.Vorname;
-            t_position.Text = s.Position;
-            t_nummer.Text = s.Rueckennummer;
-            t_seit.Text = s.Seit;
-            t_geboren.Text = s.GeburtsDatum;
-            t_groesse.Text = s.GroesseInCm;
-            t_gewicht.Text = s.GewichtInKg;
-            t_spieletore.Text = s.SpieleInBundesliga + " / " + s.ToreInBundesliga;
-            t_nation.Text = s.Nation;
-            t_laenderspiele.Text = s.Laenderspiele;
-            _currentPlayer = s;
+            t_name.Text = player.Name;
+            t_vorname.Text = player.Vorname;
+            t_position.Text = player.Position;
+            t_nummer.Text = player.Rueckennummer;
+            t_seit.Text = player.Seit;
+            t_geboren.Text = player.GeburtsDatum;
+            t_groesse.Text = player.GroesseInCm;
+            t_gewicht.Text = player.GewichtInKg;
+            t_spieletore.Text = player.SpieleInBundesliga + " / " + player.ToreInBundesliga;
+            t_nation.Text = player.Nation;
+            t_laenderspiele.Text = player.Laenderspiele;
+            _currentPlayer = player;
 
             try
             {
                 var size = new Size(218, 327);
-                var playerBitmap = new Bitmap(@"Resources\" + s.Bild, true);
+                var playerBitmap = new Bitmap(@"Resources\" + player.Bild, true);
                 var resizedPlayerBitmap = new Bitmap(playerBitmap, size); // resize pictures
                 p_box.Image = resizedPlayerBitmap;
             }
