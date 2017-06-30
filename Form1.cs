@@ -63,6 +63,10 @@ namespace Meine_Fußball_Mannschaft
             }
             catch (NullReferenceException ex)
             {
+                b_next.Enabled = false;
+                b_last.Enabled = false;
+                b_previous.Enabled = false;
+                b_first.Enabled = false;
                 Console.WriteLine(ex.Message);
             }
             catch (Exception e)
