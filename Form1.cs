@@ -67,6 +67,7 @@ namespace Meine_Fußball_Mannschaft
                 b_last.Enabled = false;
                 b_previous.Enabled = false;
                 b_first.Enabled = false;
+                c_box.Enabled = false;
                 Console.WriteLine(ex.Message);
             }
             catch (Exception e)
