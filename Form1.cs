@@ -38,26 +38,38 @@ namespace Meine_Fußball_Mannschaft
 
             _squad = new Squad();
 
-            foreach (var element in _player)
+            try
             {
-                var player = new Player();
-                player.Name = element.Element("Name").Value;
-                player.Vorname = element.Element("Vorname").Value;
-                player.Bild = player.Name + " " + player.Vorname + ".jpg";
-                player.Position = element.Element("Position").Value.ToUpper();
-                player.Rueckennummer = element.Element("Rueckennummer").Value;
-                player.Seit = element.Element("Seit").Value;
-                player.GeburtsDatum = element.Element("GeburtsDatum").Value;
-                player.GroesseInCm = element.Element("GroesseInCm").Value;
-                player.GewichtInKg = element.Element("GewichtInKg").Value;
-                player.SpieleInBundesliga = element.Element("SpieleInBundesliga").Value;
-                player.ToreInBundesliga = element.Element("ToreInBundesliga").Value;
-                player.Nation = element.Element("Nation").Value;
-                player.Laenderspiele = element.Element("Laenderspiele").Value;
-                player.NameGesamt = player.Vorname + " " + player.Name;
-                _squad.PlayerList.Add(player);
+                foreach (var element in _player)
+                {
+                    var player = new Player();
+                    player.Name = element.Element("Name").Value;
+                    player.Vorname = element.Element("Vorname").Value;
+                    player.Bild = player.Name + " " + player.Vorname + ".jpg";
+                    player.Position = element.Element("Position").Value.ToUpper();
+                    player.Rueckennummer = element.Element("Rueckennummer").Value;
+                    player.Seit = element.Element("Seit").Value;
+                    player.GeburtsDatum = element.Element("GeburtsDatum").Value;
+                    player.GroesseInCm = element.Element("GroesseInCm").Value;
+                    player.GewichtInKg = element.Element("GewichtInKg").Value;
+                    player.SpieleInBundesliga = element.Element("SpieleInBundesliga").Value;
+                    player.ToreInBundesliga = element.Element("ToreInBundesliga").Value;
+                    player.Nation = element.Element("Nation").Value;
+                    player.Laenderspiele = element.Element("Laenderspiele").Value;
+                    player.NameGesamt = player.Vorname + " " + player.Name;
+                    _squad.PlayerList.Add(player);
+                }
+                FirstPlayer();
             }
-            FirstPlayer();
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         private void UpdatePlayer(Player s)

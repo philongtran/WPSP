@@ -249,5 +249,17 @@
   <ItemGroup>
     <None Include="bin\Debug\Resources\Zimmermann Matthias.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources1\resultset_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources1\resultset_last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources1\resultset_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resources1\resultset_previous.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
