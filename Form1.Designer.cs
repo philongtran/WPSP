@@ -62,7 +62,7 @@
             // 
             // b_first
             // 
-            //this.b_first.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_first;
+            this.b_first.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_first;
             this.b_first.Location = new System.Drawing.Point(49, 474);
             this.b_first.Name = "b_first";
             this.b_first.Size = new System.Drawing.Size(50, 50);
@@ -72,7 +72,7 @@
             // 
             // b_previous
             // 
-            //this.b_previous.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_previous;
+            this.b_previous.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_previous;
             this.b_previous.Location = new System.Drawing.Point(105, 474);
             this.b_previous.Name = "b_previous";
             this.b_previous.Size = new System.Drawing.Size(50, 50);
@@ -82,7 +82,7 @@
             // 
             // b_next
             // 
-            //this.b_next.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_next;
+            this.b_next.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_next;
             this.b_next.Location = new System.Drawing.Point(161, 474);
             this.b_next.Name = "b_next";
             this.b_next.Size = new System.Drawing.Size(50, 50);
@@ -92,7 +92,7 @@
             // 
             // b_last
             // 
-            //this.b_last.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_last;
+            this.b_last.Image = global::Meine_Fußball_Mannschaft.Properties.Resources.resultset_last;
             this.b_last.Location = new System.Drawing.Point(217, 474);
             this.b_last.Name = "b_last";
             this.b_last.Size = new System.Drawing.Size(50, 50);
