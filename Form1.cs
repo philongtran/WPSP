@@ -7,13 +7,30 @@ using System.Xml;
 using System.Xml.Linq;
 
 namespace Meine_Fußball_Mannschaft
-{
+{   
+    /// <summary>
+    /// UI logic
+    /// </summary>
     public partial class Form1 : Form
-    {
+    {   
+        /// <summary>
+        /// XML file which contains all information about the players
+        /// </summary>
         private readonly IEnumerable<XElement> _player;
+
+        /// <summary>
+        /// list of all player objects from the same club
+        /// </summary>
         private readonly Squad _squad;
+
+        /// <summary>
+        /// currently selected player in UI
+        /// </summary>
         private Player _currentPlayer;
 
+        /// <summary>
+        /// default constructor
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -77,6 +94,10 @@ namespace Meine_Fußball_Mannschaft
             }
         }
 
+        /// <summary>
+        /// when switching to a new player, loads all information and image belonging to a this player 
+        /// </summary>
+        /// <param name="player"> chosen player </param>
         private void UpdatePlayer(Player player)
         {
             t_name.Text = player.Name;
@@ -116,6 +137,9 @@ namespace Meine_Fußball_Mannschaft
             }
         }
 
+        /// <summary>
+        /// shows the complete name of all players in the combo box
+        /// </summary>
         private void ShowPlayerList()
         {
             c_box.DataSource = _squad.PlayerList;
@@ -123,6 +147,9 @@ namespace Meine_Fußball_Mannschaft
             c_box.SelectedIndex = _squad.PlayerList.IndexOf(_currentPlayer);
         }
 
+        /// <summary>
+        /// switches to the last player of the list
+        /// </summary>
         private void LastPlayer()
         {
             UpdatePlayer(_squad.PlayerList.Last());
@@ -131,6 +158,9 @@ namespace Meine_Fußball_Mannschaft
             b_last.Enabled = false;
         }
 
+        /// <summary>
+        /// switches to the first player of the list
+        /// </summary>
         private void FirstPlayer()
         {
             UpdatePlayer(_squad.PlayerList[0]);
@@ -139,6 +169,11 @@ namespace Meine_Fußball_Mannschaft
             b_first.Enabled = false;
         }
 
+        /// <summary>
+        /// event listener for the combo box
+        /// </summary>
+        /// <param name="sender"> c_box </param>
+        /// <param name="e"> triggered event </param>
         private void c_box_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!b_previous.Enabled && !b_first.Enabled)
@@ -179,6 +214,11 @@ namespace Meine_Fußball_Mannschaft
             }
         }
 
+        /// <summary>
+        /// event listener for the next button
+        /// </summary>
+        /// <param name="sender"> b_next </param>
+        /// <param name="e"> triggered event </param>
         private void b_next_Click(object sender, EventArgs e)
         {
             if (!b_previous.Enabled && !b_first.Enabled)
@@ -206,6 +246,11 @@ namespace Meine_Fußball_Mannschaft
             }
         }
 
+        /// <summary>
+        /// event listener for the previous button
+        /// </summary>
+        /// <param name="sender"> b_previous </param>
+        /// <param name="e"> triggered event </param>
         private void b_previous_Click(object sender, EventArgs e)
         {
             if (!b_next.Enabled && !b_last.Enabled)
@@ -232,6 +277,11 @@ namespace Meine_Fußball_Mannschaft
             }
         }
 
+        /// <summary>
+        /// event listener for the last button
+        /// </summary>
+        /// <param name="sender"> b_last </param>
+        /// <param name="e"> triggered event </param>
         private void b_last_Click(object sender, EventArgs e)
         {
             if (!b_previous.Enabled && !b_first.Enabled)
@@ -254,6 +304,11 @@ namespace Meine_Fußball_Mannschaft
             }
         }
 
+        /// <summary>
+        /// event listener for the first button
+        /// </summary>
+        /// <param name="sender"> b_first </param>
+        /// <param name="e"> triggered event </param>
         private void b_first_Click(object sender, EventArgs e)
         {
             if (!b_next.Enabled && !b_last.Enabled)
