@@ -89,21 +89,24 @@ namespace Meine_Fußball_Mannschaft
 
             try
             {
-                var groesse = new Size(218, 327);
-                var spielerBildBitmap = new Bitmap(@"Resources\" + s.Bild, true);
-                var spielerBildBitmap2 = new Bitmap(spielerBildBitmap, groesse); // da manche Bilder zu groß
-                p_box.Image = spielerBildBitmap2;
+                var size = new Size(218, 327);
+                var playerBitmap = new Bitmap(@"Resources\" + s.Bild, true);
+                var resizedPlayerBitmap = new Bitmap(playerBitmap, size); // resize pictures
+                p_box.Image = resizedPlayerBitmap;
             }
             catch (ArgumentException ex)
             {
+                p_box.Image = null;
                 Console.WriteLine(ex.Message);
             }
             catch (NullReferenceException ex)
             {
+                p_box.Image = null;
                 Console.WriteLine(ex.Message);
             }
             catch (Exception ex)
             {
+                p_box.Image = null;
                 Console.WriteLine(ex.Message);
             }
         }
