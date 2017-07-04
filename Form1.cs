@@ -30,15 +30,21 @@ namespace Meine_Fußball_Mannschaft
         private Player _currentPlayer;
 
         /// <summary>
+        /// base path of player data
+        /// </summary>
+        private const string BasePath = @"Resources\Players\";
+
+        /// <summary>
         /// default constructor
         /// </summary>
         public Form1()
         {
             InitializeComponent();
+            
 
             try
             {
-                var playerXml = XElement.Load(@"Resources\SpielerData.xml");
+                var playerXml = XElement.Load(BasePath + "SpielerData.xml");
                 _player = playerXml.Element("SpielerListe").Elements("Spieler");
             }
             catch (XmlException ex)
@@ -117,7 +123,7 @@ namespace Meine_Fußball_Mannschaft
             try
             {
                 var size = new Size(218, 327);
-                var playerBitmap = new Bitmap(@"Resources\" + player.Bild, true);
+                var playerBitmap = new Bitmap(BasePath + player.Bild, true);
                 var resizedPlayerBitmap = new Bitmap(playerBitmap, size); // resize pictures
                 p_box.Image = resizedPlayerBitmap;
             }
