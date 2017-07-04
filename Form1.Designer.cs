@@ -1,4 +1,5 @@
-﻿namespace Meine_Fußball_Mannschaft
+﻿/// Phi Long Tran <191624>, Viet Cuong Nguyen <191515>, Manuel Wessner <191711>, Johanna Mergler <193028>
+namespace Meine_Fußball_Mannschaft
 {
     partial class Form1
     {
